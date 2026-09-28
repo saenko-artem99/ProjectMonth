@@ -10,3 +10,5 @@ fastparquet
 sentence-transformers<4
 torch==2.2.2
 mlflow
+boto3==1.39.8
+botocore==1.39.8
