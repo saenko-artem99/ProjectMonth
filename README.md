@@ -33,7 +33,7 @@ MVP системы поиска товаров по каталогу CalmFruits:
   - взвешенный гибрид 85% e5 / 15% лексика (эксперимент 3) — эффект в пределах статистического шума.
 - Итоговая выбранная конфигурация — чистый `search_semantic_e5` (модель `intfloat/multilingual-e5-base`, без гибридизации).
 - **Финальный тест** (один прогон на `queries_synthetic_test.parquet`, 300 запросов): NDCG@10 = 0.491, подтверждает устойчивость результата (train/val NDCG@10 = 0.493); на том же test-сплите лексический baseline даёт NDCG@10 = 0.428.
-- **Трекинг экспериментов в MLflow:** 6 прогонов (`lexical_tfidf`, `semantic_minilm_baseline`, `semantic_e5_base`, `hybrid_rrf`, `hybrid_weighted`, `semantic_e5_base_FINAL_TEST`, `lexical_tfidf_FINAL_TEST`) с обязательными параметрами/метриками и артефактами; проверено `check_mlflow.py`. Логирование устойчиво к недоступности сервиса MLflow: `summary_*.csv`/`per_query_*.csv` всегда сохраняются локально, а сам прогон в MLflow логируется только если сервис отвечает.
+- **Трекинг экспериментов в MLflow:** 7 прогонов (`lexical_tfidf`, `semantic_minilm_baseline`, `semantic_e5_base`, `hybrid_rrf`, `hybrid_weighted`, `semantic_e5_base_FINAL_TEST`, `lexical_tfidf_FINAL_TEST`) с обязательными параметрами/метриками и артефактами; проверено `check_mlflow.py`. Логирование устойчиво к недоступности сервиса MLflow: `summary_*.csv`/`per_query_*.csv` всегда сохраняются локально, а сам прогон в MLflow логируется только если сервис отвечает.
 - Подробный разбор всех решений, гипотез, качественный анализ ошибок и рекомендация бизнесу — в `semantic_search_project_workbook.md`, разделы 2.6, 3, 4, 5.
 - В `semantic_search_project.ipynb` сохранены исходные комментарии ревьюера (цветные блоки) вместе с ответами на них, чтобы было легче сверяться по ревью.
 
